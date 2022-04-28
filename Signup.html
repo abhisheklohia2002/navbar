@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{
+            text-align: center;
+        }
+        #name{
+        height: 30px;
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 10px;
+        }
+        #email{
+            height: 30px;
+            font-size: 20px;
+        text-align: center;
+        margin-bottom: 10px;
+
+
+        }
+        #password{
+            height: 30px;
+            font-size: 20px;
+        text-align: center;
+        margin-bottom: 10px;
+
+/* justify-content: center; */
+        }
+        #submit{
+            height: 30px;
+            font-size: 20px; 
+        }
+        #form{
+          text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form action="" id="form">
+        <h2>Sign Up</h2>
+        <input placeholder="Enter Name" id="name" name="name" type="text" /><br>
+        <input placeholder="Enter email" type="email" name="email" id="email" /> </br>
+        
+        <input id="password"
+          type="password"
+          placeholder="password"
+        /></br>
+        <input id="submit" type="submit" name="submit" value="Submit" />
+      </form>
+</body>
+</html>
+
+<script>
+    document.querySelector("#form").addEventListener("submit",clickme);
+ function   clickme(){
+     event.preventDefault();
+     var name = document.querySelector("#name").value;
+     var email = document.querySelector("#email").value;
+     var pass = document.querySelector("#password").value;
+ var arr = [];
+   var obj = {
+       main_name :name,
+       main_email:email,
+       main_pass :pass,
+
+   }
+   arr.push(obj);
+   localStorage.setItem("redirect",JSON.stringify(arr));
+   var x = arr[0];
+   if(x.main_name == name && x.main_email == email && x.main_pass == pass){
+   
+    window.location.href = "login.html";
+   }
+  
+ 
+   
+ }
+</script>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+        }
+        #conatiner{
+            display: flex;
+            font-size: 25px;
+            margin-top: 20px;
+           
+            margin-left: 10px;
+            margin-right: 10px;
+            background-color: black;
+            color: white;
+height: 60px;
+border-radius: 10px;
+
+        }
+        #conatiner  #box{
+            justify-items: center;
+            padding-left: 1000px;
+
+          
+        }
+        #box{
+            display: flex;
+            text-align: center;
+            margin-top: 16px;
+
+        }
+        .a{
+            margin-left: 50px;
+            font-size: 18px;
+            color: rgb(99, 94, 94);
+            list-style: none;
+            text-decoration: none;
+  color: teal;
+        }
+        #s{
+            margin-top: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="conatiner">
+        <p id="s">Reebok</p>
+        <div id="box">
+            <p class="a"><a  href="mens.html">Men</a> </p>
+            <p class="a"><a href="women.html">Women</a> </p>
+            <p class="a" id="p"><a href="login.html"> Login</a></p>
+            <p class="a"  ><a id="p2" href="Signup.html">Signup</a> </p>
+        </div>
+    </div>
+
+    
+</body>
+
+</html>
+
+<script>
+
+
+  var max = JSON.parse(localStorage.getItem("redirect"));
+    var x = max[0];
+
+    if(true){
+        var p = document.querySelector("#p").innerText = x.main_name;
+        var p1 = document.querySelector("#p2").innerText = "Sign out"
+    }
+   
+
+    document.querySelector("#p2").addEventListener("click",go);
+    function go(){
+        event.target.ParentNode.remove();
+        event.target.ParentNode.innerText = "Sign out";
+        document.querySelector("#p").innerText = "Login"
+    }
+//    var p = document.querySelector("#p").innertext = 
+</script>
